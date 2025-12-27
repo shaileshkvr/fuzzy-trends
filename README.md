@@ -4,7 +4,7 @@
 
 ## Tech Stack
 
-- **Frontend**: Next.js 15, React 19, Tailwind CSS v4, Shadcn UI
+- **Frontend**: Next.js 16, React 19, Tailwind CSS v4, Shadcn UI
 - **Backend**: Fastify (Node.js)
 - **Monorepo Tooling**: Turborepo, pnpm
 

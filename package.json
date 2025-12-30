@@ -6,6 +6,7 @@
     "dev": "turbo run dev",
     "dev:client": "turbo run dev --filter=client",
     "dev:server": "turbo run dev --filter=server",
+    "ui:add": "pnpm --filter @repo/ui comp",
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""

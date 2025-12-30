@@ -41,6 +41,7 @@ pnpm dev
 #### Individual Services
 
 - **Frontend** (`http://localhost:5008`):
+
   ```bash
   pnpm dev:client
   ```
@@ -48,6 +49,19 @@ pnpm dev
 - **Backend** (`http://localhost:5009`):
   ```bash
   pnpm dev:server
+  ```
+
+#### Download Shadcn UI components
+
+- Use `comp` command in `packages/ui`
+
+  ```bash
+  pnpm comp <component-name>
+  ```
+
+- Use `ui:add` command in `root`
+  ```bash
+  pnpm ui:add <component-name>
   ```
 
 ## Styling
@@ -58,5 +72,6 @@ See `apps/client/HowToStyle.md` for detailed instructions on customizing the the
 ## Architecture
 
 This project is structured as a monorepo using **Turborepo**.
+
 - **Shared UI**: Components in `packages/ui` are transpiled and consumed directly by the client app, ensuring a single source of truth for design tokens and components.
 - **Fastify Backend**: A lightweight and fast backend server located in `apps/server`.

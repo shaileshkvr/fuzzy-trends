@@ -9,11 +9,10 @@
     "src"
   ],
   "exports": {
+    ".": "./src/index.ts",
     "./styles.css": "./dist/index.css",
     "./globals.css": "./src/globals.css",
-    "./components/*": "./src/components/*.tsx",
-    "./lib/utils": "./src/lib/utils.ts",
-    "./*": "./dist/*.js"
+    "./lib/utils": "./src/lib/utils.ts"
   },
   "license": "MIT",
   "scripts": {

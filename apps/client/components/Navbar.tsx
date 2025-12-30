@@ -3,10 +3,17 @@ import Image from "next/image";
 import Searchbar from "./Searchbar";
 import { ShoppingCartIcon } from "lucide-react";
 import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  Button,
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@repo/ui/components/dropdown-menu";
+} from "@repo/ui";
 
 const Navbar = () => {
   return (
@@ -25,12 +32,28 @@ const Navbar = () => {
       {/* RIGHT SECTION */}
       <div className="flex items-center">
         {/* SEARCH BAR */}
-        <div className="flex items-center">
+        <div className="flex items-center gap-6">
           <Searchbar />
-          <ShoppingCartIcon />
+          <ShoppingCartIcon className="text-gray-400 hover:text-gray-500" />
           {/* Show signin if logged out */}
           <DropdownMenu>
-            
+            <DropdownMenuTrigger>
+              <Avatar>
+                <AvatarImage src="https://github.com/shaileshkvr.png" />
+                <AvatarFallback>SH</AvatarFallback>
+              </Avatar>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>My Orders</DropdownMenuItem>
+              <DropdownMenuItem>Wishlist</DropdownMenuItem>
+              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Button variant="destructive">Sign Out</Button>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
           </DropdownMenu>
         </div>
       </div>

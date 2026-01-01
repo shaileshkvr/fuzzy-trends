@@ -1,12 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import Searchbar from "./Searchbar";
-import { ShoppingCartIcon } from "lucide-react";
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  Button,
+  ListIcon,
+  LogOutIcon,
+  PackageIcon,
+  SettingsIcon,
+  ShoppingCartIcon,
+  UserIcon,
+} from "lucide-react";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -19,7 +22,7 @@ const Navbar = () => {
   return (
     <div className="p-2 flex items-center justify-between border-b-2 border-gray-200 mb-4">
       {/* LEFT SECTION */}
-      <Link href="/" className="flex items-center rounded-xl">
+      <Link href="/" className="flex items-center">
         <Image
           src="/logo.png"
           alt="FuzzyTrends"
@@ -34,24 +37,36 @@ const Navbar = () => {
         {/* SEARCH BAR */}
         <div className="flex items-center gap-6">
           <Searchbar />
-          <ShoppingCartIcon className="text-gray-400 hover:text-gray-500" />
+          <Link href="/">
+            <ShoppingCartIcon className="h-[1.2rem] w-[1.2rem] text-gray-500" />
+          </Link>
           {/* Show signin if logged out */}
           <DropdownMenu>
-            <DropdownMenuTrigger>
-              <Avatar>
-                <AvatarImage src="https://github.com/shaileshkvr.png" />
-                <AvatarFallback>SH</AvatarFallback>
-              </Avatar>
+            <DropdownMenuTrigger className="hover:scale-[0.95] transition-all rounded-full">
+              <UserIcon className="h-[1.2rem] w-[1.2rem] text-gray-500" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>My Orders</DropdownMenuItem>
-              <DropdownMenuItem>Wishlist</DropdownMenuItem>
-              <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>
-                <Button variant="destructive">Sign Out</Button>
+                <UserIcon className="h-[1.2rem] w-[1.2rem] mr-2" />
+                Profile
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <PackageIcon className="h-[1.2rem] w-[1.2rem] mr-2" />
+                Orders
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <ListIcon className="h-[1.2rem] w-[1.2rem] mr-2" />
+                Wishlist
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <SettingsIcon className="h-[1.2rem] w-[1.2rem] mr-2" />
+                Settings
+              </DropdownMenuItem>
+              <DropdownMenuItem variant="destructive">
+                <LogOutIcon className="h-[1.2rem] w-[1.2rem] mr-2" />
+                Sign Out
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

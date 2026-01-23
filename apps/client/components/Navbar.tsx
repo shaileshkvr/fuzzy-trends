@@ -37,7 +37,7 @@ const Navbar = () => {
         {/* SEARCH BAR */}
         <div className="flex items-center gap-6">
           <Searchbar />
-          <Link href="/">
+          <Link href="/cart">
             <ShoppingCartIcon className="h-[1.2rem] w-[1.2rem] text-gray-500" />
           </Link>
           {/* Show signin if logged out */}
